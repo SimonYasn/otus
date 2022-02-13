@@ -1,6 +1,6 @@
 # About
 
-Simple application with sqlite3 database based on python. Running on 5000 port.
+Simple web application with sqlite3 database based on python. Running on 5000 port.
 Easy deployment with Vagrant
 
 ## Installation
