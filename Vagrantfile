@@ -69,6 +69,7 @@ Vagrant.configure("2") do |config|
     yes | sudo apt-get install python3-pip
     pip3 install flask
     pip3 install flask_sqlalchemy
+    pip3 install prometheus_flask_exporter
     python3 /vagrant/app.py
   SHELL
 end

@@ -1,8 +1,12 @@
-from flask import Flask
 from flask import render_template, request, redirect, url_for
+from flask import Flask
+from prometheus_flask_exporter import PrometheusMetrics
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+PrometheusMetrics(app)
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 
@@ -31,5 +35,6 @@ def update():
     # return request.form # DEBUG REQUEST
     return redirect(url_for("index"))
 
-if __name__ == '__main__':
-    app.run("0.0.0.0", debug=True)
+if __name__ == "__main__":
+    app.run("0.0.0.0", 5000, threaded=True)
+
