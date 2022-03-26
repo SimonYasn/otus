@@ -1,0 +1,15 @@
+---
+    driver:
+      name: docker
+    platforms:
+      - name: postgresql-instance
+        hostname: postgresql-instance
+        image: registry.example.com/postgres10:latest
+        pre_build_image: true
+        override_command: false
+        network_mode: host
+      - name: app-instance
+        hostname: app-instance
+        pre_build_image: true
+        image: registry.example.com/docker_centos_ansible_tests
+        network_mode: host
