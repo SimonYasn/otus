@@ -1,0 +1,4 @@
+
+ - name: ansible-role-apache
+   src: git+https://github.com/SimonYasn/ansible-role-apache.git
+   version: master
